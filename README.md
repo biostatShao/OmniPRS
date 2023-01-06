@@ -61,7 +61,7 @@ for(GRS.model in c("CT","DBSLMM", "PRS.CS","lassosum",
 ```
 
 ## Contact
-We are very grateful to any questions, comments, or bugs reports; and please contact [Ping Zeng](https://github.com/biostatShao) via zhonghe@hust.edu.cn.
+We are very grateful to any questions, comments, or bugs reports; and please contact [Zhonghe Shao](https://github.com/biostatShao) via zhonghe@hust.edu.cn.
 
 ## Update
 2023-01-06 omniPRS version 1.0.

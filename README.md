@@ -1,5 +1,5 @@
 # omniPRS
-===============================================================================
+===========================================================================
 ## Background
 Here we provide a new PRS model using conventional algorithms BLUP that estimate individuals' total genetic effects as random effects in mixed linear models.
 

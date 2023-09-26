@@ -1,7 +1,7 @@
 # OmniPRS
 ===========================================================================
 ## Background
-Here we provide a new PRS model using conventional algorithms BLUP that estimate individuals' total genetic effects as random effects in mixed linear models.
+We introduced OmniPRS, a framework that enhances the genetic risk prediction for complex diseases and traits using the GWAS summary statistics. Within the framework, we re-estimated the effect sizes of SNPs with the mixed model, where the genetic variance components are based on their functional annotations and can be tissue-specific. We constructed multiple tissue-specific PRSs and integrated these scores as the final OmniPRS. 
 
 **[OmniPRS](https://github.com/biostatShao/OmniPRS)** is implemented in R statistical environment.
 

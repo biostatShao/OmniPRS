@@ -7,8 +7,7 @@ We introduced OmniPRS, a framework that enhances the genetic risk prediction for
 ```ruby
 library(data.table)
 library(magrittr)
-source("~/szh_code.R")
-source("~/GRS.pipeline.R")
+source("~/function.R")
 
 traits = "Height"
 bina = F

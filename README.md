@@ -34,9 +34,6 @@ for(chr in 1:22){
 }
 ```
 ## Citations
-Sheng Yang, and Xiang Zhou (2024). SRT-Server: Powering the analysis of spatial transcriptomic data. Genome Medicine. in press.
-
-
 Zhonghe Shao, Wangxia Tang, Yifan Kong, Si Li, Yunlong Guan, Hongji Wu, Minghui Jiang, Xi Cao, Xingjie Hao* (2024). OmniPRS: Incorporating multiple functional annotations to improve polygenic risk prediction accuracy. Am. J. Hum. Genet. in press.
 
 

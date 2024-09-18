@@ -1,7 +1,7 @@
 # OmniPRS
 ![](https://github.com/biostatShao/OmniPRS/blob/main/image.png)
 ===========================================================================
-# 1: Overview
+# 1 Overview
 
 With the rapid development and maturation of high-throughput omics technologies, we face new opportunities and challenges in integrating multi-level and multi-omics data for computational modeling and disease risk prediction. Polygenic Risk Scores (PRS) play a crucial role in this systems epidemiology, effectively predicting disease risk at both individual and population levels, optimizing screening programs, and enabling precision prevention.
 
@@ -13,7 +13,7 @@ Additionally, we explore three alternative strategies for integrating tissue-spe
 
 Ultimately, the OmniPRS package provides a comprehensive tool and metrics for assessing the overall genetic risk of diseases or traits by aggregating individual polygenic scores from multiple functional categories.
 
-# 2: Installation Instructions
+# 2 Installation Instructions
 
 The OmniPRS package does not require installation and can be directly invoked. Before use, set the working directory to the location of the software:
 ```r
@@ -52,7 +52,7 @@ require(rhdf5)
 require(BAS)
 require(glmnet)
 ```
-## 3: Usage Instructions
+## 3 Usage Instructions
 
 ### 3.1 Input Files
 

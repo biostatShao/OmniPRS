@@ -184,4 +184,4 @@ Zhonghe Shao, Wangxia Tang, Yifan Kong, Si Li, Yunlong Guan, Hongji Wu, Minghui 
 We are very grateful to any questions, comments, or bugs reports; and please contact [Zhonghe Shao](https://github.com/biostatShao) via zhonghe@hust.edu.cn.
 
 ## Update
-2024-06-17 OmniPRS version 2.0.
+2024-06-17 OmniPRS version 1.0.0

@@ -43,7 +43,7 @@ import glob
 import re
 import traceback
 ```
-Then, in the R environment, load the OmniPRS-R package by entering:
+Then, in the R environment, load the OmniPRS package by entering:
 ```r
 setwd("/your/path/")
 require(data.table)

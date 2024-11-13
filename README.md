@@ -177,8 +177,7 @@ Prediction levels are output as filenames (e.g., if the prediction level R² is 
 
 
 ## Citations
-Zhonghe Shao, Wangxia Tang, Yifan Kong, Si Li, Yunlong Guan, Hongji Wu, Minghui Jiang, Xi Cao, Xingjie Hao* (2024). OmniPRS: Incorporating multiple functional annotations to improve polygenic risk prediction accuracy. submitted.
-
+Zhonghe Shao, Wangxia Tang, Hongji Wu, Yifan Kong, Xingjie Hao* (2024). Incorporating multiple functional annotations to improve polygenic risk prediction accuracy. submitted.
 
 ## Contact
 We are very grateful to any questions, comments, or bugs reports; and please contact [Zhonghe Shao](https://github.com/biostatShao) via zhonghe@hust.edu.cn.

@@ -100,6 +100,8 @@ Format:
 
 - `traits`: Trait name (e.g., Height). The prefix of the summary data file should be consistent (e.g., Height_sums.txt). Directory name for output files.
 - `chr`: Chromosome number (e.g., 1)
+- `N`: The GWAS sample size
+- `h2`: Estimated SNP Heritability (pre-compute this using your favorite method).
 - `sums_p`: Absolute path to the summary data (e.g., `/your/path/sum_file/`)
 - `base_p`: Absolute path to the directory storing Plink format LD data (e.g., `/your/path/plink/`)
 - `base_f`: Prefix of Plink format LD data files, without the chromosome number (e.g., for chromosome 1, the file is `eur_hm3_chr1`, so enter `eur_hm3_chr`)
@@ -168,6 +170,8 @@ for (chr in 1:22) {
 
 Prediction levels are output as filenames (e.g., if the prediction level R² is 0.45, the output will be a file named `OmniPRS-0.45`).
 
+## Acknowledgments
+We refer to the preprocessor of GWAS data in LDpred.funct software developed by Carla Márquez-Luna for this software.
 
 ## Citations
 Zhonghe Shao, Wangxia Tang, Hongji Wu, Yifan Kong, Xingjie Hao* (2024). lncorporating multiple functional annotations to improve polygenic risk prediction accuracy, Cell Genomics (2025), https://doi.org/10.1016/i.xgen.2025.100850

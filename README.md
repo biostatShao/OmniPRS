@@ -45,12 +45,7 @@ import traceback
 ```
 Then, in the R environment, load the OmniPRS package by entering:
 ```r
-setwd("/your/path/")
-require(data.table)
-require(magrittr)
-require(rhdf5)
-require(BAS)
-require(glmnet)
+source("/your/path/OmniPRS.R")
 ```
 ## 3 Usage Instructions
 

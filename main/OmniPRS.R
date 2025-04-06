@@ -10,6 +10,9 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
   snpvg = fread(paste0(sums_p,"snpvg.txt"))
   funct_temp = cbind(snpvg[,3],1) %>% as.data.frame()
   fwrite(funct_temp,paste0(sums_p,"funct.txt"),sep="\t",quote=F, row.names=F)
+  phen = fread(pheno)
+  phen = phen[,c("UDI",phe_trait)]
+  fwrite(phen,paste0(sums_p,"pheno.txt"),sep="\t",quote=F, row.names=F)
   
   rere <- NULL
   outCoord = paste0(temp_p,"/",traits,"_",chr)

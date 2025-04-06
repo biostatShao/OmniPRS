@@ -114,6 +114,8 @@ Format:
 - `cova`: Covariates to consider; if none, enter `NULL` (e.g., `c("BaseAge","Sexgenetic")`)
 - `bina`: Whether the outcome is binary data (e.g., `T`)
 - `ct_result`: Whether to output 11 tissue-specific PRS prediction levels (e.g., `T`)
+- `software_path`: The directory to OmniPRS (e.g., `/your/path/`)
+- `plink_path`: The directory to PLINK1.9 and PLINK2.0
 
 ## 3.3 Running
 
@@ -124,17 +126,17 @@ Below is an example of running the OmniPRS package:
 R 4.1.2
 
 # Set parameters
-base_p <- "/data2/projects/bioinfo/zhshao/hm3eur/"
+base_p <- "/data2/projects/bioinfo/1KG/"
 base_f <- "eur_hm3_chr"
-target_p <- "/data2/projects/bioinfo/zhshao/UKB_hm3eur/"
+target_p <- "/data2/projects/bioinfo/UKB/"
 target_f <- "ukb22828_eur_hm3_chr"
-pheno <- "/data2/projects/bioinfo/zhshao/GRS/ukbb.phen"
-temp <- "/data2/projects/bioinfo/zhshao/GRS/temp_ukb/"
+pheno <- "/data2/projects/bioinfo/ukbb.phen"
+temp <- "/data2/projects/bioinfo/temp_ukb/"
 cova <- c("BaseAge", "Sexgenetic", paste0("PC", 1:10))
 traits <- "Height"
 bina <- FALSE
-sums_p <- "/data2/projects/bioinfo/zhshao/GWAS.summary/sums/"
-out <- "/home/zhshao/project/GRS/111_result/1-qq/"
+sums_p <- "/data2/projects/bioinfo/sums/"
+out <- "/data2/projects/bioinfo/out/"
 phe_trait <- traits
 print(traits)
 

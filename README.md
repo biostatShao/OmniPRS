@@ -24,25 +24,6 @@ require(rhdf5)
 require(BAS)
 require(glmnet)
 ```
-And the following Python packages:
-```python
-import getopt
-import sys
-import os
-import math
-import timeit
-import time
-import h5py
-import scipy as sp
-from scipy import stats
-from scipy import linalg
-from plinkio import plinkfile
-import itertools as it
-import gzip
-import glob
-import re
-import traceback
-```
 Then, in the R environment, load the OmniPRS package by entering:
 ```r
 source("/your/path/OmniPRS.R")
@@ -92,9 +73,9 @@ The file must adhere strictly to the following format:
 #### 3.1.4 Phenotype File
 
 Format:
-- Column 1: FID
+- Column 1: UDI
 - Column 2: Phenotype
-- Column 3 (optional): Covariates
+- Column 3- (optional): Covariates
 
 ### 3.2 Input Parameters
 

@@ -1,28 +1,23 @@
 
-  GRS.OmniPRS <- function(traits, chr, sums_p, base_p, base_f,
+  GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p, base_f,
                           target_p, target_f, pheno, phe_trait, out, temp, bina = F,
                          software_path, plink_path){
     t1 = Sys.time()
     cat("Start OmniPRS method \n")
-    out_p <- paste0(out,traits); dir.check(out_p)
-    temp_p <- paste0(temp,traits); dir.check(temp_p)
-    if(file.exists(paste0(temp_p, "/", "OmniPRS-",chr,".profile"))) return(NULL)
-    
-    N <- fread(paste0(sums_p,traits,"-N.txt")) %>% as.numeric
-    h2 <- fread(paste0(sums_p,traits,"-h2.txt")) %>% as.numeric
+    out_p <- paste0(out,traits); dir.create(out_p)
+    temp_p <- paste0(temp,traits); dir.create(temp_p)
     
     rere <- NULL
     outCoord = paste0(temp_p,"/",traits,"_",chr)
     if(file.exists(outCoord)) file.remove(outCoord)
     
-    omni <- paste0("python ",software_path,"/sum_cord.py",
+    omni <- paste0("python2 ",software_path,"/sum_cord.py",
                    " --gf=",base_p,base_f,chr,
                    " --pf=",sums_p,traits,"_trait.txt",
                    " --FUNCT_FILE=",sums_p,traits,"_fa.txt",
                    " --coord=",outCoord,
                    " --ssf=",sums_p,traits,"_sums.txt",
                    " --N=",N,
-                   # " --posterior_means=",temp_p,"/",chr,"_",ct,"_PM",
                    " --H2=",h2,
                    " --out=",temp_p,"/",chr,"_PRS")
     system(omni)

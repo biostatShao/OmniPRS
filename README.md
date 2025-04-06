@@ -141,11 +141,9 @@ sums_p <- paste0(sums_p, traits, "/")
 
 # Run OmniPRS for each chromosome
 for (chr in 1:22) {
-    try({
-        OmniPRS(traits, chr, sums_p,
-            base_p, base_f, cova, target_p, target_f,
-            pheno, phe_trait, out, temp, bina)
-    })
+  OmniPRS(traits, chr, sums_p,
+    base_p, base_f, cova, target_p, target_f,
+    pheno, phe_trait, out, temp, bina)
 }
 ```
 

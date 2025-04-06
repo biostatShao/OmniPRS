@@ -7,6 +7,10 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
   out_p <- paste0(out,traits); dir.create(out_p)
   temp_p <- paste0(temp,traits); dir.create(temp_p)
   
+  snpvg = fread(paste0(sums_p,"snpvg.txt"))
+  funct_temp = cbind(snpvg[,3],1) %>% as.data.frame()
+  fwrite(funct_temp,paste0(sums_p,"funct.txt"),sep="\t",quote=F, row.names=F)
+  
   rere <- NULL
   outCoord = paste0(temp_p,"/",traits,"_",chr)
   if(file.exists(outCoord)) file.remove(outCoord)
@@ -30,11 +34,10 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
   t2 = Sys.time()
   
   raw_snps = apply(hd5_cor$raw_snps_ref,2 ,scale) %>% t
-  snpvg = fread(paste0(sums_p,"snpvg.txt"))
   for(ct in 1:11){
     cat("cell type ",ct,"\n")
     sid = hd5_cor$sid; sid = cbind(sid,1:length(sid)) %>% data.frame
-    snp_h2 = fread(paste0(sums_p,traits,"_fc_",ct,".txt"))
+    snp_h2 = snpvg[,c(3,3+ct)]
     
     colnames(snp_h2)[2] = "tiss"
     snp_h2 = snp_h2[snp_h2$tiss > 0, ]

@@ -103,10 +103,8 @@ Format:
 - `N`: The GWAS sample size
 - `h2`: Estimated SNP Heritability (pre-compute this using your favorite method).
 - `sums_p`: Absolute path to the summary data (e.g., `/your/path/sum_file/`)
-- `base_p`: Absolute path to the directory storing Plink format LD data (e.g., `/your/path/plink/`)
-- `base_f`: Prefix of Plink format LD data files, without the chromosome number (e.g., for chromosome 1, the file is `eur_hm3_chr1`, so enter `eur_hm3_chr`)
-- `target_p`: Absolute path to the directory storing Plink format test set data (e.g., `/your/path/plink/`)
-- `target_f`: Prefix of Plink format test set data files, without the chromosome number (e.g., for chromosome 1, the file is `ukb22828_eur_hm3_chr1`, so enter `ukb22828_eur_hm3_chr`)
+- `base_p`: Prefix of Plink format LD data files, without the chromosome number (e.g., for chromosome 1, the file is `/your/path/plink/eur_hm3_chr1`, so enter `/your/path/plink/eur_hm3_chr`)
+- `target_p`: Prefix of Plink format test set data files, without the chromosome number (e.g., for chromosome 1, the file is `/your/path/plink/ukb22828_eur_hm3_chr1`, so enter `/your/path/plink/ukb22828_eur_hm3_chr`)
 - `pheno`: Phenotype file and its absolute path. If covariates are included, they should be in this file (e.g., `/your/path/ukbb.phen`)
 - `phe_trait`: Column name of the outcome in the phenotype file (e.g., Height)
 - `out`: Output path for result files (e.g., `/your/path/out/`)

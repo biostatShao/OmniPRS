@@ -1,7 +1,23 @@
+#  traits: Trait name (e.g., Height). The prefix of the summary data file should be consistent (e.g., Height_sums.txt). Directory name for output files.
+#  chr: Chromosome number (e.g., 1)
+#  N: The GWAS sample size
+#  h2: Estimated SNP Heritability (precompute this using your favorite method).
+#  sums_p: Absolute path to the summary data (e.g., /your/path/sum_file/)
+#  base_p: Prefix of Plink format LD data files, without the chromosome number (e.g., for chromosome 1, the file is /your/path/plink/eur_hm3_chr1, so enter /your/path/plink/eur_hm3_chr)
+#  target_p: Prefix of Plink format test set data files, without the chromosome number (e.g., for chromosome 1, the file is /your/path/plink/ukb22828_eur_hm3_chr1, so enter /your/path/plink/ukb22828_eur_hm3_chr)
+#  pheno: Phenotype file and its absolute path. If covariates are included, they should be in this file (e.g., /your/path/ukbb.phen)
+#  phe_trait: Column name of the outcome in the phenotype file (e.g., Height)
+#  out: Output path for result files (e.g., /your/path/out/)
+#  temp: Output path for temporary files (e.g., /your/path/temp/)
+#  cova: Covariates to consider; if none, enter NULL (e.g., c("BaseAge","Sexgenetic"))
+#  bina: Whether the outcome is binary data (e.g., T)
+#  ct_result: Whether to output 11 tissuespecific PRS prediction levels (e.g., T)
+#  software_path: The directory to OmniPRS (e.g., /your/path/)
+#  plink_path: The directory to PLINK1.9 and PLINK2.0
 
 GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
-                        target_p, pheno, phe_trait, out, temp, bina = F,
-                        software_path, plink_path){
+                        target_p, pheno, phe_trait, out, temp, cova,
+                        bina = F,software_path, plink_path){
   t1 = Sys.time()
   cat("Start OmniPRS method \n")
   out_p <- paste0(out,traits); dir.create(out_p)

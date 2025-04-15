@@ -115,7 +115,7 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
       
       res <- NULL
       for(c in 1:22){
-        d1 = paste0(temp_p, "/", "OmniPRS","-",c,"_",ct,".profile") %>% fread(.) %>%
+        d1 = paste0(temp_p, "/OmniPRS-",c,"_",ct,".profile") %>% fread(.) %>%
           .[,c("FID", "SCORESUM")]
         if(c == 1){
           res <- d1[,c("FID","SCORESUM")]
@@ -147,6 +147,20 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     
     # system(paste0("rm ",temp_p,"/*"))
     
+    bet <- NULL
+    for(c in 1:22){
+      bet_tem <- fread(paste0(temp_p,"/1_",ct,"_PM_Omni.txt"))[,c(1,4)]
+      colnames(bet_tem) = c("RSID","baseline")
+      for(ct in 2:11){
+        d2 = fread(paste0(temp_p,"/",c,"_",ct,"_PM_Omni.txt"))[,c(1,4)]
+        colnames(d2) = c("RSID",c("baseline","AdrenalPancreas","Cardiovascular","CNS","ConnectiveBone",
+                                  "GI","Hematopoietic","Kidney","Liver","Other","SkeletalMuscle")[ct])
+        bet_tem = merge(bet_tem,d2,by = "RSID")
+      }
+      bet = rbind(bet,bet_tem)
+    }
+    fwrite(bet,paste0(out_p,"/OmniPRS_beta"))
+    
     phen <- fread(pheno)
     data <- merge(phen, rere, by.x = "UDI", by.y = "FID") %>% data.frame()
     data_adj <- cbind(y=data[,which(colnames(data) == phe_trait)], 
@@ -159,7 +173,7 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     BMA.re <- crossV(10, data_adj, "BMA", bina = bina)
     
     final_result = as.data.frame(cbind(rere,EW.re$score,Lasso.re$score,BMA.re$score))
-    fwrite(final_result,paste0(out_p,"/OmniPRS"))
+    fwrite(final_result,paste0(out_p,"/OmniPRS_score"))
   }
   
   lasso <- function(data, bina = F, lambdas=exp(seq(log(0.001), log(0.1), length.out = 20))){

@@ -140,7 +140,7 @@ for (chr in 1:22) {
 
 #### 3.4.2 Polygenic Risk Scores for Validation Set Individuals ("OmniPRS_score")
 
-- **Column 1**: FID
+- **Column 1**: Individual ID
 - **Columns 2-12**: Tissue-specific polygenic risk scores for each tissue
 - **Column 13**: Polygenic risk score using the EW algorithm
 - **Column 14**: Polygenic risk score using the LASSO algorithm

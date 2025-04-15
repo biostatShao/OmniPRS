@@ -149,13 +149,13 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     
     bet <- NULL
     for(c in 1:22){
-      bet_tem <- fread(paste0(temp_p,"/1_",ct,"_PM_Omni.txt"))[,c(1,4)]
-      colnames(bet_tem) = c("RSID","baseline")
+      bet_tem <- fread(paste0(temp_p,"/1_",ct,"_PM_Omni.txt"))[,c(1,2,4)]
+      colnames(bet_tem) = c("RSID","A1","baseline")
       for(ct in 2:11){
-        d2 = fread(paste0(temp_p,"/",c,"_",ct,"_PM_Omni.txt"))[,c(1,4)]
-        colnames(d2) = c("RSID",c("baseline","AdrenalPancreas","Cardiovascular","CNS","ConnectiveBone",
+        d2 = fread(paste0(temp_p,"/",c,"_",ct,"_PM_Omni.txt"))[,c(1,2,4)]
+        colnames(d2) = c("RSID","A1",c("baseline","AdrenalPancreas","Cardiovascular","CNS","ConnectiveBone",
                                   "GI","Hematopoietic","Kidney","Liver","Other","SkeletalMuscle")[ct])
-        bet_tem = merge(bet_tem,d2,by = "RSID")
+        bet_tem = merge(bet_tem,d2,by = c("RSID","A1"))
       }
       bet = rbind(bet,bet_tem)
     }

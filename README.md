@@ -132,24 +132,18 @@ for (chr in 1:22) {
 
 ### 3.4 Output Files
 
-#### 3.4.1 Posterior Estimates of Effect Sizes
+#### 3.4.1 Posterior Estimates of Effect Sizes ("OmniPRS_beta")
 
 - **Column 1**: SNP ID
-- **Column 2**: Minor Allele
-- **Columns 3-13**: Posterior estimates of tissue-specific effect sizes for each tissue
+- **Columns 2-12**: Posterior estimates of tissue-specific effect sizes for each tissue
 
-#### 3.4.2 Polygenic Risk Scores for Validation Set Individuals
+#### 3.4.2 Polygenic Risk Scores for Validation Set Individuals ("OmniPRS_score")
 
-- **Column 1**: SNP ID
-- **Column 2**: Minor Allele
-- **Columns 3-13**: Tissue-specific polygenic risk scores for each tissue
-- **Column 14**: Polygenic risk score using the EW algorithm
-- **Column 15**: Polygenic risk score using the LASSO algorithm
-- **Column 16**: Polygenic risk score using the BMA algorithm
-
-#### 3.4.3 Polygenic Risk Score Prediction Levels
-
-Prediction levels are output as filenames (e.g., if the prediction level R² is 0.45, the output will be a file named `OmniPRS-0.45`).
+- **Column 1**: FID
+- **Columns 2-12**: Tissue-specific polygenic risk scores for each tissue
+- **Column 13**: Polygenic risk score using the EW algorithm
+- **Column 14**: Polygenic risk score using the LASSO algorithm
+- **Column 15**: Polygenic risk score using the BMA algorithm
 
 ## Acknowledgments
 We refer to the preprocessor of GWAS data in LDpred.funct software developed by Carla Márquez-Luna for this software.

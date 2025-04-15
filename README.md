@@ -135,7 +135,8 @@ for (chr in 1:22) {
 #### 3.4.1 Posterior Estimates of Effect Sizes ("OmniPRS_beta")
 
 - **Column 1**: SNP ID
-- **Columns 2-12**: Posterior estimates of tissue-specific effect sizes for each tissue
+- **Column 2**: Minor allele name
+- **Columns 3-13**: Posterior estimates of tissue-specific effect sizes for each tissue
 
 #### 3.4.2 Polygenic Risk Scores for Validation Set Individuals ("OmniPRS_score")
 

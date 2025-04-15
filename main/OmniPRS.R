@@ -100,13 +100,13 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     prs <- paste0(plink_path,
                   " --bfile ",target_p, chr,
                   " --score ", temp_p,"/",chr,"_",ct,"_PM_Omni.txt 1 2 4 header sum",
-                  " --out ", temp_p, "/", "OmniPRS","-",chr,"_",ct,
-                  " > ", temp_p, "/", "OmniPRS","-",chr,"_",ct)
+                  " --out ", temp_p, "/OmniPRS-",chr,"_",ct,
+                  " > ", temp_p, "/OmniPRS-",chr,"_",ct)
     system(prs)
     
-    system(paste0("touch /home/zhshao/out/temp/OmniPRS.done.",traits,"_",ct,"_chr_",chr))
+    system(paste0("touch ",temp_p,"/OmniPRS.done.",traits,"_",ct,"_chr_",chr))
     
-    files <- list.files(path = "/home/zhshao/out/temp/",
+    files <- list.files(path = temp_p,
                         pattern = paste0("OmniPRS",".done.",traits,"_",ct,"_chr_"))
     cat(length(files), " chromosome are completed in cell type",ct,"\n")
     if(length(files) == 22){
@@ -134,10 +134,10 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
       }
     }
   }
-  system(paste0("touch /home/zhshao/out/temp/OmniPRS.done.",traits,"_chr_",chr))
-  cat("OmniPRS"," in chr",chr,"done\n")
+  system(paste0("touch ",temp_p,"/OmniPRS.done.",traits,"_chr_",chr))
+  cat("OmniPRS in chr",chr,"done\n")
   
-  files <- list.files(path = "/home/zhshao/out/temp/",
+  files <- list.files(path = temp_p,
                       pattern = paste0("OmniPRS",".done.",traits,"_chr_"))
   cat("A total of ",length(files), " chromosome files has created\n")
   if(length(files) == 22){
@@ -146,7 +146,7 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     options(scipen=100)
     
     # system(paste0("rm ",temp_p,"/*"))
-    fwrite(rere,paste0(sums_p,"/OmniPRS"))
+    
     phen <- fread(pheno)
     data <- merge(phen, rere, by.x = "UDI", by.y = "FID") %>% data.frame()
     data_adj <- cbind(y=data[,which(colnames(data) == phe_trait)], 
@@ -158,9 +158,8 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     # Elasticnet.re <- crossV(10, data_adj, "elasticnet")
     BMA.re <- crossV(10, data_adj, "BMA", bina = bina)
     
-    fwrite(as.data.frame(EW.re$score),paste0(out_p,"/", "OmniPRS.E"))
-    fwrite(as.data.frame(Lasso.re$score),paste0(out_p,"/", "OmniPRS.L"))
-    fwrite(as.data.frame(BMA.re$score),paste0(out_p,"/", "OmniPRS.B"))
+    final_result = as.data.frame(cbind(rere,EW.re$score,Lasso.re$score,BMA.re$score))
+    fwrite(final_result,paste0(out_p,"/OmniPRS"))
   }
   
   lasso <- function(data, bina = F, lambdas=exp(seq(log(0.001), log(0.1), length.out = 20))){
@@ -289,7 +288,6 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     # }
     if(print_b) return(list(score = score, R2=R2,beta=as.matrix(resu_b[resu_R == max(resu_R),]))) else return(R2)
   }
-  
   
   sum.pro <- function(summs, trait.name = "Height", 
                       out = "/data2/projects/bioinfo/zhshao/GWAS.summary/sums/"){
@@ -623,4 +621,5 @@ GRS.OmniPRS <- function(traits, chr, N, h2 sums_p, base_p,
     ov[2, 3] = ov[3, 2]
     aova = t(av) %*% ov %*% (av)
   }
+  
   

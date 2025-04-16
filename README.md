@@ -150,7 +150,7 @@ for (chr in 1:22) {
 We refer to the preprocessor of GWAS data in LDpred.funct software developed by Carla Márquez-Luna for this software.
 
 ## Citations
-Zhonghe Shao, Wangxia Tang, Hongji Wu, Yifan Kong, Xingjie Hao* (2024). lncorporating multiple functional annotations to improve polygenic risk prediction accuracy, Cell Genomics (2025), https://doi.org/10.1016/i.xgen.2025.100850
+Zhonghe Shao, Wangxia Tang, Hongji Wu, Yifan Kong, Xingjie Hao* (2024). lncorporating multiple functional annotations to improve polygenic risk prediction accuracy, Cell Genomics (2025), [https://doi.org/10.1016/i.xgen.2025.100850](https://doi.org/10.1016/j.xgen.2025.100850)
 
 ## Contact
 We are very grateful to any questions, comments, or bugs reports; and please contact [Zhonghe Shao](https://github.com/biostatShao) via zhonghe@hust.edu.cn.

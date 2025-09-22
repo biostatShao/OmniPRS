@@ -55,8 +55,10 @@ c. From the Baseline-LD annotation downloaded [here](https://data.broadinstitute
 d. Define the expected heritability of each SNP as an `M*1` vector, which is the result of matrix `X` multiplied by `T`.
 
 The final file format is:
-- Column 1: SNP ID
-- Column 2: Heritability of each SNP
+- **Column 1**: Chromosome
+- **Column 2**: Physical position
+- **Column 3**: SNP ID
+- **Columns 4-14**: Tissue-specific Heritability for each tissue of each SNP
 
 #### 3.1.3 GWAS Summary Statistics File
 
@@ -73,9 +75,9 @@ The file must adhere strictly to the following format:
 #### 3.1.4 Phenotype File
 
 Format:
-- Column 1: UDI
-- Column 2: Phenotype
-- Column 3- (optional): Covariates
+- **Column 1**: UDI
+- **Column 2**: Phenotype
+- **Column 3- (optional)**: Covariates
 
 ### 3.2 Input Parameters
 

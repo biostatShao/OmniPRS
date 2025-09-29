@@ -52,7 +52,7 @@ b. Retrieve the regression coefficients from the `*.results` file (8th column). 
 
 c. From the Baseline-LD annotation downloaded [here](https://data.broadinstitute.org/alkesgroup/LDSCORE/), read the annotation file `baselineLD.*.annot.gz` and retain only the annotation columns (i.e., remove the first 4 columns). This matrix is denoted as `X` with dimensions `M*C`, where `M` is the number of SNPs and `C` is the total number of annotations.
 
-d. Define the expected heritability of each SNP as an `M*1` vector, which is the result of matrix `X` multiplied by `T`.
+d. Define the expected heritability of each SNP as an `M*11` vector, which is the result of matrix `X` multiplied by `T`.
 
 The final file format is:
 - **Column 1**: Chromosome
